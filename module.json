@@ -5,8 +5,8 @@
   
   "version":"1.0",
   "description":"My module description",
-  "url":"https://github.com/tommag/Sample-Chataigne-module",
-  "downloadURL":"https://github.com/tommag/Sample-Chataigne-module/archive/master.zip",
+  "url":"https://github.com/ziginfo/Mixingstation-Chataigne-Module.git",
+  "downloadURL":"https://github.com/ziginfo/Mixingstation-Chataigne-Module/archive/master.zip",
 
   "hasInput":true,
   "hasOutput":true, 
