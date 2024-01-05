@@ -1,0 +1,64 @@
+{
+  "name":"Mixingstation",
+  "type":"OSC",
+  "path":"Software",
+  
+  "version":"1.0",
+  "description":"My module description",
+  "url":"https://github.com/tommag/Sample-Chataigne-module",
+  "downloadURL":"https://github.com/tommag/Sample-Chataigne-module/archive/master.zip",
+
+  "hasInput":true,
+  "hasOutput":true, 
+
+  "hideDefaultCommands":false,
+  
+  "defaults": {	
+    "autoAdd":true,
+    "OSC Input": { "localPort":9000 },
+    "OSC Outputs": {
+			"OSC Output": {
+				"local" : false,
+				"remotePort" : 3000,			
+				"listenToFeedback":true } }
+  },
+
+  "parameters": {
+    "Module param": {"type":"Integer"  }
+  },
+
+  "hideDefaultParameters": [ ],
+
+  "scripts": 
+  [
+    "mixingstation.js"
+  ],
+
+  "values":
+  {
+    "Module value":
+    {
+      "type":"Float"
+    }
+  },
+
+  "commands":
+  {
+    
+    "Custom command":
+    {
+      "menu":"",  
+      "callback":"customCmd",
+      "parameters":
+      {
+        "Value":
+        {
+          "type":"Integer",
+          "min":0,
+          "max":100,
+          "default":0
+        }
+      }
+    }
+  }
+}
