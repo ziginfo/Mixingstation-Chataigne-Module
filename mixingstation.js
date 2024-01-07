@@ -32,6 +32,9 @@ function init() {
 function moduleValueChanged(value) {
 
   	if (value.name == "syncFaders"){ 
+  	for (var n = 0; n < 36; n++) {
+   	var no = n + 1 ;
+   	local.send("/con/n/ch."+n+".mix.lvl");} 
   	}
   
 	if (value.name == "reset"){ 
@@ -156,7 +159,7 @@ function eq_f(chanNo, band, val) {
 function eq_g(chanNo, band, val) {
 	chanNo = chanNo-1 ;
 	band = band -1 ; 
-	local.send("/con/n/ch."+chanNo+".peq.bands."+band+".gain", val);
+	local.send("/con/v/ch."+chanNo+".peq.bands."+band+".gain", val);
 }
 
 function eq_q(chanNo, band, val) {
