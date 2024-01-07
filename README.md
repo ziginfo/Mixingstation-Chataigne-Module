@@ -9,4 +9,6 @@ Launch Mixingstation and insert any given Mixer ! You can than go "Online" to th
 First of all you should know that when using directly the Mixingstation-Module instead of the concerned Mixer-Chataigne-Modules, than Mixingstation count all available channels and numbers them from 0 to "last" without any distinction between Mix-Channel, Aux, Bus, Matrix, Main, DCA etc etc etc ! They are all just Channels => just as an example with an X18 mixer inserted to Mixingstation the four FX-Return-Channels are Channe 20 to 23 and the four DCA are 33 to 36 and the Main-LR Channel is number 32 etc etc... 
 
 after having inserted a given mixer in Mixingstation (and before using the Chataigne-Module) you might first see the number of the available channels and the the available actions and functions... this can be done (and seen) on the Mixingstation's API-Web-Page and the address : 
-http://localhost:8080/# and http://localhost:8080/#/data-explorer
+http://localhost:8080/#       
+http://localhost:8080/#/data-explorer    
+http://localhost:8080/#/rest-api    
