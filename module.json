@@ -3,8 +3,8 @@
   "type":"OSC",
   "path":"Software",
   
-  "version":"1.0",
-  "description":"My module description",
+  "version":"1.1",
+  "description":"Controls Mixingstation-App",
   "url":"https://github.com/ziginfo/Mixingstation-Chataigne-Module.git",
   "downloadURL":"https://github.com/ziginfo/Mixingstation-Chataigne-Module/archive/master.zip",
 
@@ -12,6 +12,13 @@
   "hasOutput":true, 
 
   "hideDefaultCommands":false,
+  "hideDefaultParameters": [
+		"colorSendMode",
+		"autoRange",
+		"autoFeedback",
+		"autoAdd",
+		"oscInput/localPort"
+	],
   
   "defaults": {	
     "autoAdd":true,
@@ -40,20 +47,431 @@
   "commands":
   {
     
-    "Custom command":
-    {
-      "menu":"",  
-      "callback":"customCmd",
-      "parameters":
-      {
-        "Value":
-        {
-          "type":"Integer",
-          "min":0,
-          "max":100,
-          "default":0
-        }
-      }
-    }
+   		"Level" : {
+			"menu" : "Channel",
+			"callback" : "mix_fader",
+			"parameters" : {
+
+				
+				"Channel No": {
+					"type": "Integer",
+					"default": 1,
+					"min":1, 				
+					"useForMapping": true	}, 
+					
+				"Level": {
+					"type": "Float",
+					"default": 0.75, 
+					"min":0,
+					"max":1,
+					"useForMapping": true	} 
+			} },
+
+		"Mute" : {
+			"menu" : "Channel",
+			"callback" : "mix_on",
+			"parameters" : {
+						
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true	}, 					
+
+				"Mute on/off": {
+					"type": "Boolean",
+					"default": 1, 
+					"min":0,
+					"max":1,
+					"useForMapping": true } 
+			} },
+		
+		"LR on" : {
+			"menu" : "Channel",
+			"callback" : "mix_st",
+			"parameters" : {
+				
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true	}, 
+					
+				"ST on/off": {
+					"type": "Boolean",
+					"default": 1, 
+					"min":0,
+					"max":1,
+					"useForMapping": true } 
+			} },
+
+		"Pan" : {
+			"menu" : "Channel",
+			"callback" : "mix_pan",
+			"parameters" : {
+						
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true	},
+					 
+				"Pan": {
+					"type": "Float",
+					"default": 0.5, 
+					"min":0,
+					"max":1,
+					"useForMapping": true	} 
+			} },
+			
+		"Solo" : {
+				"menu" : "Channel",
+				"callback" : "ch_solo",
+				"parameters" : {
+
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true	}, 
+					
+				"Solo on/off": {
+					"type": "Boolean",
+					"default": 1, 
+					"min":0,
+					"max":1,
+					"useForMapping": true } 
+			} },
+
+		
+		"Send level" : {
+			"menu" : "Channel",
+			"callback" : "mix_send_level",
+			"parameters" : {
+						
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true	},
+					 
+				"Mix": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"max":10,
+					"useForMapping": true	}, 
+					
+				"Level": {
+					"type": "Float",
+					"default": 0.75, 
+					"min":0,
+					"max":1,
+					"useForMapping": true	} 
+			} },
+			
+		
+		
+		"Full EQ (Band)" : {
+			"menu" : "EQ",
+			"callback" : "full_ch_eq",
+			"parameters" : {
+						
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true }, 
+					
+				"--------->" : {
+					"type":"String",
+					"default": "Set the EQ Parameters"  },
+						
+				"EQ On/Off": {
+					"type": "Boolean",
+					"default": 1, 
+					"min":0,
+					"max":1,
+					"useForMapping": true }, 
+				
+				"Band": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"max":6,
+					"useForMapping": true },
+					
+				"Gain(-15db/+15db)": {
+					"type": "Float",
+					"default": 0, 
+					"min":-15,
+					"max":15,
+					"useForMapping": true },
+					
+				"Frequency Select)": {
+					"type": "Float",
+					"default": 1000, 
+					"min":20,
+					"max":20000,
+					"useForMapping": true }, 
+				
+				"Q (0,3 to 10)": {
+					"type": "Float",
+					"default": 2, 
+					"min":0.3,
+					"max":10,
+					"useForMapping": true } 
+			} },
+			
+		"Lo Cut" : {
+			"menu" : "EQ",
+			"callback" : "hipass",
+			"parameters" : {
+			
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true	}, 
+				
+				"Value": {
+					"type": "Boolean",
+					"default": 1, 
+					"min":0,
+					"max":1,
+					"useForMapping": true },
+						
+				"Frequency (Set)": {
+					"type": "Float",
+					"default": 80, 
+					"min":20,
+					"max":1000,
+					"useForMapping": true }  
+			} },
+			
+		"Hi Cut" : {
+			"menu" : "EQ",
+			"callback" : "lopass",
+			"parameters" : {
+			
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true	}, 
+				
+				"Value": {
+					"type": "Boolean",
+					"default": 1, 
+					"min":0,
+					"max":1,
+					"useForMapping": true },
+						
+				"Frequency (Set)": {
+					"type": "Float",
+					"default": 20000, 
+					"min":2000,
+					"max":20000,
+					"useForMapping": true }  
+			} },
+	
+		
+		"Ch EQ Reset" : {
+			"menu" : "EQ",
+			"callback" : "ch_eq_reset",
+			"parameters" : {
+						
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true } 
+			} },
+			
+			 
+		"---------" : {"menu" : "EQ"},
+		
+
+
+
+		
+		"EQ on/off" : {
+			"menu" : "EQ",
+			"callback" : "eq_on",
+			"parameters" : {
+						
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true }, 
+					
+				"EQ on/off": {
+					"type": "Boolean",
+					"default": 1, 
+					"min":0,
+					"max":1,
+					"useForMapping": true } 
+			} },
+
+			
+		"Gain" : {
+			"menu" : "EQ",
+			"callback" : "eq_g",
+			"parameters" : {
+						
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true	}, 
+					
+				"Band": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"max":6,
+					"useForMapping": true	},
+					 
+				"Gain(-15db/+15db)": {
+					"type": "Float",
+					"default": 0, 
+					"min":-15,
+					"max":15,
+					"useForMapping": true } 
+			} },
+
+		"Frequ" : {
+			"menu" : "EQ",
+			"callback" : "eq_f",
+			"parameters" : {
+						
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true },
+					  
+				"Band": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"max":6,
+					"useForMapping": true }, 
+					
+				"Frequency (20 to 20000Hz)": {
+					"type": "Float",
+					"default": 1000, 
+					"min":20,
+					"max":20000,
+					"useForMapping": true } 
+			} },	
+	
+		"Q" : {
+			"menu" : "EQ",
+			"callback" : "eq_q",
+			"parameters" : {
+			
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true	}, 
+					
+				"Band": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"max":6,
+					"useForMapping": true	}, 
+					
+				"Q (0,3 to 10)": {
+					"type": "Float",
+					"default": 2, 
+					"min":0.3,
+					"max":10,
+					"useForMapping": true }   
+			} },
+
+		"LoCut on" : {
+			"menu" : "EQ",
+			"callback" : "preamp_hpon",
+			"parameters" : {
+					
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true	}, 
+					
+				"Value": {
+					"type": "Boolean",
+					"default": 1, 
+					"min":0,
+					"max":1,
+					"useForMapping": true } 
+			} },
+
+		
+		"LoCut Frequ" : {
+			"menu" : "EQ",
+			"callback" : "preamp_hpf",
+			"parameters" : {
+			
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true	},
+					 
+				"Frequency (Set)": {
+					"type": "Float",
+					"default": 80, 
+					"min":20,
+					"max":1000,
+					"useForMapping": true }  
+			} },
+			
+		"HiCut on" : {
+			"menu" : "EQ",
+			"callback" : "preamp_lpon",
+			"parameters" : {
+					
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true	}, 
+					
+				"Value": {
+					"type": "Boolean",
+					"default": 1, 
+					"min":0,
+					"max":1,
+					"useForMapping": true } 
+			} },
+
+		
+		"HiCut Frequ" : {
+			"menu" : "EQ",
+			"callback" : "preamp_lpf",
+			"parameters" : {
+			
+				"Channel No": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true	},
+					 
+				"Frequency (Set)": {
+					"type": "Float",
+					"default": 20000, 
+					"min":2000,
+					"max":20000,
+					"useForMapping": true }  
+			} }
+          
+          
+          
   }
 }
