@@ -18,5 +18,3 @@ After having inserted a given mixer in Mixingstation (and before using the Chata
 http://localhost:8080/#   
 http://localhost:8080/#/data-explorer   
 http://localhost:8080/#/rest-api    
-
-Beside the  predefined actions of the actions-menu in the Chataigne-Module, you can also use any available Custom-Message... please go to the #/data-explorer at localhost to see what is available for any given mixer.
