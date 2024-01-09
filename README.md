@@ -3,7 +3,10 @@
 OSC-API must be enabled in the Mixingstation Globals-Setup !    
 Default OSC Out-Port is 3000 but can be changed in the Mixingstation Globals-Setup 
 
-important : after inserting this Mixingstation-Module for the first time into a Chataigne-Session, the Containers (Faders, Labels, Buttons etc) will not show up ! You must save the session and reload it !   
+Please note that there seems to be a bug currently in the OSC-API of Mixingstation ! After sending a message with an argument to Mixingstation, this argument seems to stay as a sort of "global-arg" in Mixingstation, and than any request from Mixingstation (=> sending a message without argument) turns automatically into an "arg-command", which is "not wanted" behaviour !   
+I contacted the developer about that, and hope that the bug will be fixed soon !    
+
+Important : after inserting this Mixingstation-Module for the first time into a Chataigne-Session, the Containers (Faders, Labels, Buttons etc) will not show up ! You must save the session and reload it !   
 keyboard-shortcuts for this are :  cmd-S and than : cmd-shift-O   
 the same thing (save and reload) must be done when you eventually want to change the number of the channels !
 
