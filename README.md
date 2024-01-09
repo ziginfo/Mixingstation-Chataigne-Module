@@ -6,9 +6,8 @@ Default OSC Out-Port is 3000 but can be changed in the Mixingstation Globals-Set
 Please note that there seems to be a bug currently in the OSC-API of Mixingstation ! After sending a message with an argument to Mixingstation, this argument seems to stay as a sort of "global-arg" in Mixingstation, and than any request from Mixingstation (=> sending a message without argument) turns automatically into an "arg-command", which is "not wanted" behaviour !   
 I contacted the developer about that, and hope that the bug will be fixed soon !    
 
-Important : after inserting this Mixingstation-Module for the first time into a Chataigne-Session, the Containers (Faders, Labels, Buttons etc) will not show up ! You must save the session and reload it !   
+Important : The Default Number of Channels is set tyo 16. If you want to change this, just set the desired number in the Value-Field. But after changing the number you must save the session and reload it !   
 keyboard-shortcuts for this are :  cmd-S and than : cmd-shift-O   
-the same thing (save and reload) must be done when you eventually want to change the number of the channels !
 
 ###  How to use this...?  
 Launch Mixingstation and insert any given Mixer ! You can than (if you want) go "online" to the mixer  or stay "offline". It doesn't matter for the workaround with Chataigne, but be aware that, when Mixingstation is "online" to a given mixer, than every action in Chataigne will obviously also trigger actions directly  in the Hardware-Mixer !! While, in offline-mode the interaction concerns only the graphical interface (GUI) of Mixingstation !!    
