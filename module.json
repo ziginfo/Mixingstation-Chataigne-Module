@@ -6,7 +6,7 @@
   "version":"1.2",
   "description":"Controls Mixingstation-App",
   "url":"https://github.com/ziginfo/Mixingstation-Chataigne-Module.git",
-  "downloadURL":"https://github.com/ziginfo/Mixingstation-Chataigne-Module/archive/master.zip",
+  "downloadURL":"https://github.com/ziginfo/Mixingstation-Chataigne-Module/archive/refs/heads/main.zip",
 
   "hasInput":true,
   "hasOutput":true, 
