@@ -41,7 +41,12 @@
   ],
 
   "values":
-  { },
+  {  "Number of Channels":
+		{ "type": "Integer",
+			"description":"Set Number of Channels",
+			"default":16,
+			"min":8 }
+			},
 
   "commands":
   {
