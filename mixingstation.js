@@ -59,7 +59,7 @@ function moduleValueChanged(value) {
  	if (value.name == "syncLabels"){ 
   	for (var n = 0; n < count; n++) {
    	var no = n + 1 ;
-   	local.send("/con/v/ch."+n+".cfg.name"); } }
+   	local.send("/con/n/ch."+n+".cfg.name"); } }
    	
    	if (value.name == "syncButtons"){ 
   	for (var n = 0; n < count; n++) {
@@ -90,15 +90,11 @@ function moduleValueChanged(value) {
 function update(deltaTime) {
 		var now = util.getTime();
 		if(now > TSSendAlive) {
-		TSSendAlive = now + 2;
+		TSSendAlive = now + 6;
 		keepAlive(); }
 }
 function keepAlive() {
-		if (val == 0){
 		local.send("/hi/n");
-		val= val+1; }
-		else {local.send("/hi/v");
-		val=0 ;}
 }
 
 
@@ -117,7 +113,7 @@ function oscEvent(address, args) {
 	
 	for (var n = 0; n <= count; n++) {
 	var no = n+1 ;
-	var addr = "/con/v/ch."+n+".cfg.name" ;
+	var addr = "/con/n/ch."+n+".cfg.name" ;
 	var child = "label"+no ;
 	if (address == addr) {
 	local.values.labels.getChild('label'+no).set(args[0]); } }
