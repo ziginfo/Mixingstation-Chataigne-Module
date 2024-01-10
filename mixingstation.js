@@ -3,13 +3,13 @@ var myParameters = {};
 var count ;
 
 //====================================================================
-//						INITIAL FUNCTIONS 
+//			INITIAL FUNCTIONS 
 //====================================================================
 
 function init() {
 
 // =====================================================================
-// 						CREATE CONTAINERS
+// 			CREATE CONTAINERS
 // =====================================================================
 			
 // Faders Container>>>>>>>>>>>>>>>>>>>>>
@@ -46,7 +46,7 @@ function init() {
 }
 
 //============================================================
-//							VALUE CHANGE EVENTS
+//		VALUE CHANGE EVENTS
 //============================================================
 
 function moduleValueChanged(value) {
@@ -85,7 +85,7 @@ function moduleValueChanged(value) {
 }
 
 //============================================================
-//				KEEP ALIVE -> X-Remote Loop
+//		KEEP ALIVE -> X-Remote Loop
 //============================================================
 function update(deltaTime) {
 		var now = util.getTime();
@@ -99,7 +99,7 @@ function keepAlive() {
 
 
 //============================================================
-//							OSC EVENTS
+//		OSC EVENTS
 //============================================================
 
 function oscEvent(address, args) {
@@ -135,10 +135,10 @@ function oscEvent(address, args) {
 
 /*
 //=========================================================
-//					 REGULAR FUCNTIONS
+//		REGULAR FUCNTIONS
 //=========================================================
 
-//  ======================== CHANNEL ========================
+//  ================ CHANNEL ========================
 
 function mix_fader(chanNo, val) {
 	var chanNo = chanNo-1 ;	
@@ -178,7 +178,7 @@ function ch_label(chanNo, val) {
 	local.send("/con/v/ch."+chanNo+".cfg.name", val); 
 }
 
-// ====================== EQ =====================
+// ============== EQ =====================
 
 function full_ch_eq (chanNo, val, val1, band, val2, val3, val4) {
 	chanNo = chanNo-1 ;
