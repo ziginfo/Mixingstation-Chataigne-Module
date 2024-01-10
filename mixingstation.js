@@ -13,8 +13,6 @@ function init() {
 // =====================================================================
 			
 // Faders Container>>>>>>>>>>>>>>>>>>>>>
-
-		chanNumb = local.values.addIntParameter("Number of Channels", "Set Number of Channels" , 16, 16);
 		
 		faders = local.values.addContainer("Faders");
 		faders.setCollapsed(true);
