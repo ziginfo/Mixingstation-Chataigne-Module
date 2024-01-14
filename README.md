@@ -4,7 +4,8 @@ OSC-API must be enabled in the Mixingstation Globals-Setup !
 Default OSC Out-Port is 3000 but can be changed in the Mixingstation Globals-Setup 
 
 Please note that there seems to be a bug currently in the OSC-API of Mixingstation ! After sending a message with an argument to Mixingstation, this argument seems to stay as a sort of "global-arg" in Mixingstation, and than any request from Mixingstation (=> sending a message without argument) turns automatically into an "arg-command", which is "not wanted" behaviour !   
-I contacted the developer about that, and it is a bug in the actual Version 2.0.3 Mixingstation and will be fixed in 2.0.4 !    
+I contacted the developer about that, and it is a bug in the actual Version 2.0.3 Mixingstation and will be fixed in 2.0.4 !   
+Once that bug is fixed I will add more commands to the module !
 
 **Important** : The Default Number of Channels is set to 12. If you want to change this, just set the desired number in the Value-Field. But after changing the number you must save the session and reload it !   
 keyboard-shortcuts for this are :  cmd-S and than : cmd-shift-O   
