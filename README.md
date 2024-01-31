@@ -8,7 +8,7 @@ I contacted the developer about that, and it is a bug in the actual Version 2.0.
 Once that bug is fixed I will add more commands to the module !
 ### Important News: since today (31/01) there is a new software Version 2.0.4 out (for instance still in Beta). And David fixed this ugly Bug! So when you use MixingStation 2.0.4 you can now use ALL the features in this module... !!
 
-** Important** : The Default Number of Channels is set to 12. If you want to change this, just set the desired number in the Value-Field. But after changing the number you must save the session and reload it !   
+**Important** : The Default Number of Channels is set to 12. If you want to change this, just set the desired number in the Value-Field. But after changing the number you must save the session and reload it !   
 keyboard-shortcuts for this are :  cmd-S and than : cmd-shift-O   
 
 ###  How to use this...?  
