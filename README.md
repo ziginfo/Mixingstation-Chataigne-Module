@@ -22,3 +22,8 @@ After having inserted a given mixer in Mixingstation (and before using the Chata
 http://localhost:8080/#   
 http://localhost:8080/#/data-explorer   
 http://localhost:8080/#/rest-api    
+
+Have Fun    
+
+To learn more about Chataigne, please visit : http://benjamin.kuperberg.fr/chataigne/    
+And Ben's Youtube channel where you can find tutorials : https://youtu.be/RSBU9MwJNLY
