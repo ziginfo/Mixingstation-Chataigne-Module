@@ -3,7 +3,7 @@
 OSC-API must be enabled in the Mixingstation Globals-Setup !    
 Default OSC Out-Port is 3000 but can be changed in the Mixingstation Globals-Setup 
 
-#### Important: you should use at least  software Version 2.0.4 as there are a couple of bugs in the API of older software versions... !!
+#### Important: you should use at least Mixinstation software Version 2.0.4 as there are a couple of bugs in the API of older software versions... !!
 
 **Important** : The Default Number of Channels is set to 12. If you want to change this, just set the desired number in the Value-Field. But after changing the number you must save the session and reload it !   
 keyboard-shortcuts for this are :  cmd-S and than : cmd-shift-O   
