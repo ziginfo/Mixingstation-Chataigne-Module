@@ -50,8 +50,7 @@
   		"Number of Channels":
 			{ "type": "Integer",
 			"description":"Set Number of Channels",
-			"default":12 ,
-			"min": 12 }
+			"min": 4 }
 				
 	},
 
