@@ -234,7 +234,8 @@ function update(deltaTime) {
 }
 
 function keepAlive() {
-		local.send("/hi/n"); 
+		local.send("/hi/n");
+//		local.send("/hi/v"); 
 }
 		
 /*
